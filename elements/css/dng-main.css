@@ -38,7 +38,7 @@ html {
 }
 
 body {
-    font:normal 14px/1.2 'Museo Slab W01_100', Arial, Helvetica, sans-serif;
+    font:normal 15px/1.3 'Museo Slab W01_100', Arial, Helvetica, sans-serif;
     background:#fff url('../img/paper_fibers.png') repeat left top;
 }
 
@@ -63,15 +63,15 @@ body {
 }
 #chrome_top .polaroids.right {
     left:auto;
-    right:-2%;
+    right:-3%;
     /*background-image:url('../img/polaroids-right-desktop-@1X.jpg');*/
 }
 
 #dng_main {
     position:absolute;
-    left:25%;
+    left:15%;
     top:0;
-    width:50%;
+    width:70%;
     margin:0 auto;
 }
 #dng_main .hanging_tag {
@@ -84,7 +84,7 @@ body {
     z-index:90;
 }
 #dng_main .hanging_tag.right {
-    left:90%;
+    left:93%;
     top:362px;
     width:270px;
     height:147px;
@@ -93,7 +93,7 @@ body {
 #title_bar {
     text-align:center;
     z-index:100;
-    margin:0 0 48px 0;
+    margin:30px 0 48px 0;
 }
 #title_bar h1 {
     font-family:'IntroBlackInlineCaps', Arial, Helvetica, sans-serif;
@@ -235,7 +235,7 @@ body {
 #dng_content .left_col h3 a {
     display:block;
     font-family:'Verlag-Bold', Arial, Helvetica, sans-serif;
-    font-size:14px;
+    font-size:16px;
     color:#00a0b4;
     line-height:1;
     text-decoration:none;
@@ -249,7 +249,7 @@ body {
 #dng_content .left_col > a {
     display:block;
     font-family: 'Museo Slab W01_100', Arial, Helvetica, sans-serif;
-    font-size:16px;
+    font-size:18px;
     color:#333;
     text-decoration:none;
 }
@@ -266,10 +266,11 @@ body {
 }
 
 #dng_content p {
-    margin:0 0 20px 0;
+    margin:0 auto 20px auto;
     font-family: 'Museo Slab W01_100', Arial, Helvetica, sans-serif;
-    font-size:21px;
+    font-size:30px;
     color:#333;
+    max-width: 800px;
 }
 #dng_content #dng_generated_name {
     font-size:30px;
@@ -302,7 +303,7 @@ body {
 #dng_screen2 h3 {
     margin:0 0 10px 0;
     color:#00a0b4;
-    font-size:10px;
+    font-size:14px;
     line-height:1;
     font-weight:normal;
     letter-spacing:1px;
@@ -327,7 +328,7 @@ body {
     width:100%;
     margin:0 0 10px 0;
     color:#00a0b4;
-    font-size:14px;
+    font-size:16px;
     line-height:1;
     letter-spacing:1px;
     text-transform:uppercase;
@@ -341,10 +342,14 @@ body {
     margin-right:10px;
     padding:0 0 0 32px;
     background:transparent url('../img/radio-button-sprite.gif') no-repeat left top;
-    font-size:12px;
-    letter-spacing:0;
+    font-size:14px;
+    letter-spacing:1px;
     vertical-align:middle
 }
+#dng_form .dng_choose-sex {
+    margin: 10px auto;
+}
+
 #dng_form input {
     display:block;
     height:50px;
@@ -531,7 +536,9 @@ body {
         margin:0 auto 20px auto;
         line-height:40px;
     }
-    
+    #dng_content p {
+        font-size: 21px;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1100px) {
@@ -556,8 +563,8 @@ body {
 
     #dng_main {
         position:absolute;
-        left:11%;
         width:78%;
+        left: 11%;
     }
     #dng_main .hanging_tag {
         left:-175px;
@@ -567,9 +574,20 @@ body {
         left:86%;
         top:408px;
     }
-    
+    #dng_content p {
+        font-size: 26px;
+    }
 }
-
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    #dng_main {
+        left: 7%;
+    }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    #dng_main {
+        left: 10%;
+    }
+}
 @media only screen and (min-width: 1101px) and (max-width: 1300px) {
     
     #chrome_top {
@@ -587,7 +605,6 @@ body {
     #dng_main .hanging_tag.right {
         top:300px;
     }
-    
 }
 
 @media only screen and (min-width: 1500px) {
@@ -607,7 +624,6 @@ body {
     #dng_main .hanging_tag.right {
         top:466px;
     }
-    
 }
 
 /* FOR SWAPPING 2X IMAGES ON HIGH-DPI SCREENS */
