@@ -12,7 +12,7 @@
 
 	<!-- Mobile Specific Metas
     ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+	<meta name="viewport" content="initial-scale=1.0">
 
 	<!-- CSS
     ================================================== -->
@@ -56,10 +56,12 @@
                                 <form id="dng_form" method="post" action="#" autocomplete="off">
                                     <label for="first_name" class="centered">First Name:</label>
                                     <input type="text" name="first_name" id="first_name">
-                                    <input type="radio" name="sex" id="sex_female" class="radio_input" value="female" checked>
-                                    <label for="sex_female" class="radio_label">I am a female</label>
-                                    <input type="radio" name="sex" id="sex_male" class="radio_input" value="male">
-                                    <label for="sex_male" class="radio_label">I am a male</label>
+                                    <div class="dng_choose-sex">
+                                        <input type="radio" name="sex" id="sex_female" class="radio_input" value="female" checked>
+                                        <label for="sex_female" class="radio_label">I am a female</label>
+                                        <input type="radio" name="sex" id="sex_male" class="radio_input" value="male">
+                                        <label for="sex_male" class="radio_label">I am a male</label>
+                                    </div>
                                     <input type="submit" class="dng_btn" value="Duggarize it">
                                 </form>
                             </div>
@@ -82,6 +84,7 @@
                             <a href="">Josh &amp; Anna's Gender Reveal</a>
                         </div>
                     </div>
+                    <div class="divider show_on_mobile"><img src="elements/img/divider-horizontal.gif" alt="" /></div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
                 </div>
             </div>
