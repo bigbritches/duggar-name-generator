@@ -1,4 +1,22 @@
 $(document).ready(function() {
+
+    //FB JS SDK
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId      : '1561657267448009',
+            xfbml      : true,
+            version    : 'v2.3'
+        });
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    
 	
 	if($(window).width() < 768) {
 	    $('h1 .large_text').fitText();
@@ -150,23 +168,50 @@ $(document).ready(function() {
 	    });
 	});
 	
-	//SOCIAL SHARING
+	//SOCIAL DEFAULT SHARING
 	$('.social.facebook').on('click', function(e) {
 	    e.preventDefault();
-	    var share_link = 'http://bigbritches.webfactional.com/discovery/dng/';
-	    var facebook_url = encodeURI('https://www.facebook.com/dialog/feed?app_id=1561657267448009&display=popup&caption=Test Caption&link=' + share_link + '&picture=' + share_link + '&description=Test Description test test lorem ipsum&redirect_uri=' + share_link);
+	    var theName = $('#dng_generated_name').text(),
+	        name = 'Just found out my Duggar name, and you can too!',
+	        //url_root = 'http://discovery.bigbritches.webfactional.com/dng',
+	        url_root = 'http://tlc.agency.discovery.com/19-kids-and-counting/name-generator',
+	        //share_link = 'http://discovery.bigbritches.webfactional.com/dng/';
+	        share_link = 'http://bit.ly/1FktApV';
+	    	    
+	    if( $(this).closest('#dng_screen2').length ) {
 	    
-	    window.open(facebook_url,'','width=580,height=400');
+	        name = 'Just found out my Duggar name is ' + theName;
+	    }
+        FB.ui({
+            method: 'feed',
+            app_id: '1561657267448009',
+            link: share_link,
+            name: name,
+            picture: url_root + '/elements/img/dng-fb-share.jpg',
+            caption: 'Click HERE to find out your @19 Kids and Counting name',
+            description: '#19Kids',
+            display: 'popup',
+            href: share_link,
+        }, function(response){});
+	    
 	});
 	
 	$('.social.twitter').on('click', function(e) {
 	    e.preventDefault();
 	    
-	    var tweet_text = encodeURI('This is the text of my custom tweet lorem ipsum dolor sit amet'),
-	        share_link = 'http://bigbritches.webfactional.com/discovery/dng/',
-	        tweet_href = 'https://twitter.com/intent/tweet?text=' + tweet_text + '%20' + share_link;
+	    var theName = $('#dng_generated_name').text(),
+	        share_link = 'http://bit.ly/1FktApV',
+	        //share_link = 'http://discovery.bigbritches.webfactional.com/dng/';
+	        tweet_default_text = encodeURI('I got my Duggar name, and you can too! Find out yours here: ' + share_link + ' @TLC'),
+	        tweet_default_href = 'https://twitter.com/intent/tweet?text=' + tweet_default_text + '&hashtags=19Kids',
+	        tweet_generated_text = encodeURI('Just found out my Duggar name is ' + theName + '. Find out yours here: ' + share_link + ' @TLC'),
+	        tweet_generated_href = 'https://twitter.com/intent/tweet?text=' + tweet_generated_text + '&hashtags=19Kids';
 	    
-	    window.open(tweet_href,'','width=580,height=400');
+	    if( $(this).closest('#dng_screen2').length ) {
+	        window.open(tweet_generated_href,'','width=580,height=400');
+	    } else {
+	        window.open(tweet_default_href,'','width=580,height=400');
+	    }
 	});
 	
 });
