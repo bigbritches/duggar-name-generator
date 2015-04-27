@@ -191,7 +191,7 @@ $(document).ready(function() {
             caption: 'Click HERE to find out your @19 Kids and Counting name',
             description: '#19Kids',
             display: 'popup',
-            href: share_link,
+            //href: share_link,
         }, function(response){});
 	    
 	});
