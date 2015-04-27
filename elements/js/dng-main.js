@@ -35,7 +35,7 @@ $(document).ready(function() {
 	
 	$('#dng_form #first_name').on('keydown', function(e) {
         // Ignore controls such as backspace
-        var arr = [8,16,17,20,32,35,36,37,38,39,40,45,46,189];
+        var arr = [8,16,17,20,35,36,37,38,39,40,45,46,189];
 
         // Allow letters
         for(var i = 65; i <= 90; i++){
@@ -50,7 +50,7 @@ $(document).ready(function() {
 
     $('#dng_form #first_name').on('input', function() {
         //var regexp = /[^a-zA-Z]/g;
-        var regexp= /[- a-zA-Z]/g;
+        var regexp= /[-a-zA-Z]/g;
         if(!$(this).val().match(regexp)){
             $(this).val( $(this).val().replace(regexp,'') );
         }
@@ -158,8 +158,8 @@ $(document).ready(function() {
 	    $('#dng_screen2').fadeOut(function() {
 	        
 	        $('#dng_screen1').css('opacity', '0').show();
-	        checkForName();
 	        $('#dng_screen1 #first_name').val('');
+	        checkForName();
 	        $('#dng_screen1').animate({
 	            opacity : 1
 	        }, 300);
